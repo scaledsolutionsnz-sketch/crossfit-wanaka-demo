@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CrossFit Wanaka | CrossFit Gym, Wānaka</title>
-<meta name="description" content="Coached CrossFit classes in the heart of Wānaka. All levels welcome — every workout scaled to you. Fundamentals, small group training and drop-in sessions at The Gym Wanaka.">
+<meta name="description" content="Coached CrossFit classes in the heart of Wānaka. All levels welcome, every workout scaled to you. Fundamentals, small group training and drop-in sessions at The Gym Wanaka.">
 <meta property="og:title" content="CrossFit Wanaka | CrossFit Gym, Wānaka">
 <meta property="og:description" content="Coached CrossFit classes in the heart of Wānaka. All levels welcome, every workout scaled to you.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=70">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#131417">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23e8402a'/%3E%3Ctext x='32' y='44' font-family='Arial Black,Arial' font-size='30' font-weight='900' fill='%23131417' text-anchor='middle'%3ECW%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
   --ink-2:#1b1d22;
   --bone:#f2f0ec;
   --paper:#faf9f7;
-  --accent:#e8402a;
+  --accent:#017BC9;
   --line:rgba(19,20,23,.12);
   --line-light:rgba(255,255,255,.14);
   --radius:2px;
@@ -41,8 +42,12 @@ h1,h2,h3,.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:
 .section-head p{margin-top:14px;color:rgba(19,20,23,.72)}
 .site-img{filter:saturate(.8) contrast(1.05)}
 /* ---------- intro overlay ---------- */
-#intro{position:fixed;inset:0;background:var(--ink);z-index:200;display:flex;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.77,0,.18,1) .55s,visibility 0s 1.3s}
-#intro .display{color:#fff;font-size:clamp(26px,6vw,54px);opacity:0;transform:translateY(18px);animation:introText .6s ease-out .08s forwards}
+#intro{position:fixed;inset:0;background:#FBFCFC;z-index:200;display:flex;flex-direction:column;gap:20px;align-items:center;justify-content:center;transition:transform .7s cubic-bezier(.77,0,.18,1) .55s,visibility 0s 1.3s}
+#intro .intro-logo{width:min(200px,42vw);height:auto;opacity:0;transform:translateY(14px) scale(.94);animation:introMark .7s cubic-bezier(.2,.7,.25,1) .05s forwards}
+#intro .display{color:var(--ink);font-size:clamp(20px,4vw,32px);opacity:0;transform:translateY(18px);animation:introText .6s ease-out .34s forwards}
+#intro .intro-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left center;animation:introBar 1.15s cubic-bezier(.2,.7,.25,1) forwards}
+@keyframes introMark{to{opacity:1;transform:none}}
+@keyframes introBar{to{transform:scaleX(1)}}
 #intro .display span{color:var(--accent)}
 @keyframes introText{to{opacity:1;transform:none}}
 #intro.done{transform:translateY(-100%);visibility:hidden}
@@ -50,13 +55,14 @@ h1,h2,h3,.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s;background:transparent}
 .nav.solid{background:rgba(19,20,23,.96);box-shadow:0 1px 0 var(--line-light)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.brand{font-family:'Anton',sans-serif;font-size:20px;letter-spacing:.04em;color:#fff;text-transform:uppercase;white-space:nowrap}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Anton',sans-serif;font-size:20px;letter-spacing:.04em;color:#fff;text-transform:uppercase;white-space:nowrap}
+.brand img{width:34px;height:auto;flex:none}
 .brand span{color:var(--accent)}
 .nav-links{display:none;align-items:center;gap:30px}
 .nav-links a{color:rgba(255,255,255,.85);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
 .nav-links a:hover{color:var(--accent)}
 .nav-cta{display:none;align-items:center;gap:8px;background:var(--accent);color:#fff;font-weight:700;font-size:14px;letter-spacing:.05em;padding:11px 20px;border-radius:var(--radius);transition:background .2s}
-.nav-cta:hover{background:#c8321f}
+.nav-cta:hover{background:#0164A7}
 .nav-cta svg{width:16px;height:16px}
 .burger{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:0;cursor:pointer;padding:10px}
 .burger span{display:block;height:2px;background:#fff;transition:transform .25s,opacity .25s}
@@ -88,7 +94,7 @@ h1,h2,h3,.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.05em;text-transform:uppercase;padding:16px 28px;border-radius:var(--radius);transition:background .2s,color .2s,border-color .2s;min-height:52px}
 .btn svg{width:17px;height:17px;flex:0 0 auto}
 .btn-accent{background:var(--accent);color:#fff}
-.btn-accent:hover{background:#c8321f}
+.btn-accent:hover{background:#0164A7}
 .btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 .hero-review{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:12px 18px;background:rgba(255,255,255,.09);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);border-radius:var(--radius)}
@@ -203,11 +209,15 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
 </head>
 <body>
 
-<div id="intro" aria-hidden="true"><div class="display">CrossFit <span>Wanaka</span></div></div>
+<div id="intro" aria-hidden="true">
+  <img class="intro-logo" src="img/logo.png" alt="CrossFit Wanaka" width="936" height="948">
+  <div class="display">CrossFit <span>Wanaka</span></div>
+  <span class="intro-bar"></span>
+</div>
 
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand">CrossFit <span>Wanaka</span></a>
+    <a href="#top" class="brand"><img src="img/logo.png" alt="" width="936" height="948">CrossFit <span>Wanaka</span></a>
     <nav class="nav-links" aria-label="Main">
       <a href="#classes">Classes</a>
       <a href="#about">About</a>
@@ -242,7 +252,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
   <div class="wrap hero-content">
     <span class="eyebrow">CrossFit Box · Wānaka, Otago</span>
     <h1>Coached CrossFit in the heart of <em>Wānaka</em></h1>
-    <p class="hero-sub">Everyday people working hard together. Every workout is scaled to your level — whether it's your first class or your five hundredth.</p>
+    <p class="hero-sub">Everyday people working hard together. Every workout is scaled to your level, whether it's your first class or your five hundredth.</p>
     <div class="hero-ctas">
       <a href="tel:+6421469496" class="btn btn-accent">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -263,7 +273,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11M6.5 17.5h11M4 6.5v11M20 6.5v11M2 8.5v7M22 8.5v7M8.5 12h7"/></svg>
       <div>
         <h3>Every level, catered for</h3>
-        <p>Workouts modified to match your fitness — beginners train beside seasoned athletes.</p>
+        <p>Workouts modified to match your fitness, beginners train beside seasoned athletes.</p>
       </div>
     </div>
     <div class="trust-item reveal">
@@ -295,7 +305,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
         <div class="img-box"><img class="site-img" src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=900&q=70" alt="Athlete pressing a barbell overhead in a CrossFit gym" loading="lazy" width="900" height="506"></div>
         <div class="class-body">
           <h3>CrossFit Classes</h3>
-          <p>Our bread and butter — a coached one-hour class mixing strength work and conditioning, different every day.</p>
+          <p>Our bread and butter, a coached one-hour class mixing strength work and conditioning, different every day.</p>
           <a class="class-link" href="#contact">Book a class <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </article>
@@ -311,7 +321,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
         <div class="img-box"><img class="site-img" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=900&q=70" alt="Athlete training with battle ropes" loading="lazy" width="900" height="506"></div>
         <div class="class-body">
           <h3>Small Group Training</h3>
-          <p>Tight-knit sessions with more coaching eyes on you — ideal if you want faster progress with mates.</p>
+          <p>Tight-knit sessions with more coaching eyes on you, ideal if you want faster progress with mates.</p>
           <a class="class-link" href="#contact">Enquire <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </article>
@@ -319,7 +329,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
         <div class="img-box"><img class="site-img" src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=900&q=70" alt="Athlete doing pull-ups on a rig" loading="lazy" width="900" height="506"></div>
         <div class="class-body">
           <h3>Drop-In Sessions</h3>
-          <p>Visiting Wānaka? Drop in for a workout with the locals — travelling CrossFitters are always welcome.</p>
+          <p>Visiting Wānaka? Drop in for a workout with the locals, travelling CrossFitters are always welcome.</p>
           <a class="class-link" href="#contact">Drop in <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </article>
@@ -335,8 +345,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
     <div class="about-copy reveal">
       <span class="eyebrow">About the box</span>
       <h2>Fit for the life you came to Wānaka for</h2>
-      <p>CrossFit Wanaka is home to everyday people who train for the simple love of moving their bodies and working hard. We believe CrossFit can lift anyone's fitness — so you can get more out of the mountains, the lake and everything else this place throws at you.</p>
-      <p>Based at The Gym Wanaka, we run coached classes morning and evening, six days a week. You won't just get fitter here — you'll become part of the crew.</p>
+      <p>CrossFit Wanaka is home to everyday people who train for the simple love of moving their bodies and working hard. We believe CrossFit can lift anyone's fitness, so you can get more out of the mountains, the lake and everything else this place throws at you.</p>
+      <p>Based at The Gym Wanaka, we run coached classes morning and evening, six days a week. You won't just get fitter here, you'll become part of the crew.</p>
       <ul class="about-check">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Locally owned and coached, right here in Wānaka</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Official CrossFit affiliate with certified coaches</li>
@@ -358,7 +368,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
         <div>
           <h3>Toby Donnelly</h3>
           <p class="role">Owner · Head Coach</p>
-          <p>CrossFit Level 2 certified. Toby leads the programming and makes sure every athlete — first-timer or veteran — gets a workout that fits.</p>
+          <p>CrossFit Level 2 certified. Toby leads the programming and makes sure every athlete, first-timer or veteran, gets a workout that fits.</p>
         </div>
       </article>
       <article class="crew-card reveal">
@@ -383,7 +393,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
     <div class="review-grid">
       <article class="review-card reveal">
         <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
-        <blockquote>“Amazing classes, space and variety. Really inclusive with lots of different ages and ability levels — the early morning sessions are a great way to start the day.”</blockquote>
+        <blockquote>“Amazing classes, space and variety. Really inclusive with lots of different ages and ability levels, the early morning sessions are a great way to start the day.”</blockquote>
         <div class="review-meta">
           <div class="avatar" aria-hidden="true">BC</div>
           <div>
@@ -394,7 +404,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);padding:44px 0;border-t
       </article>
       <article class="review-card reveal">
         <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
-        <blockquote>“Great gym space and quality classes. Drop-in sessions available as well as long term memberships — early morning workouts to get the day started right.”</blockquote>
+        <blockquote>“Great gym space and quality classes. Drop-in sessions available as well as long term memberships, early morning workouts to get the day started right.”</blockquote>
         <div class="review-meta">
           <div class="avatar" aria-hidden="true">IM</div>
           <div>
